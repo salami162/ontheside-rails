@@ -1,0 +1,35 @@
+<h1>Editing User</h1>
+
+<%= form_for :user, url: user_path(@user.id), method: :put do |f| %>
+  <% if @user.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :about %>
+    <%= f.text_area :about %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>
