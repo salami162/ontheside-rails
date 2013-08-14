@@ -34,9 +34,6 @@ screenshots
 /log/*.log
 /tmp
 
-# As a courtesy ignore the old config file
-config/firebird-local.conf
-
 # Numerous always-ignore extensions
 *.diff
 *.err
